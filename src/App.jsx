@@ -1,6 +1,7 @@
+import Form from './components/Form'
+import Country from './components/Country'
 import Attr from './components/Attr'
 import './App.css'
-import Country from './components/Country'
 
 function App() {
     return (
@@ -14,18 +15,7 @@ function App() {
             </header>
 
             <main>
-                <div>
-                    <input type="text" name="" id="" />
-
-                    <select name="" id="">
-                        <option>Filter by Region</option>
-                        <option value="africa">Africa</option>
-                        <option value="america">Americas</option>
-                        <option value="asia">Asia</option>
-                        <option value="europe">Europe</option>
-                        <option value="oceania">Oceania</option>
-                    </select>
-                </div>
+                <Form />
 
                 <section>
                     <Country />
