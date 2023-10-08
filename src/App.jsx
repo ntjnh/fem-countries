@@ -2,6 +2,7 @@ import Form from './components/Form'
 import Country from './components/Country'
 import Attr from './components/Attr'
 import './App.css'
+import CountryInfo from './components/CountryInfo'
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
 
                 <section>
                     <Country />
+                    {/* <CountryInfo /> */}
                 </section>
 
             </main>
