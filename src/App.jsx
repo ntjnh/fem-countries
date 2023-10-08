@@ -3,17 +3,12 @@ import Country from './components/Country'
 import Attr from './components/Attr'
 import './App.css'
 import CountryInfo from './components/CountryInfo'
+import Header from './components/Header'
 
 function App() {
     return (
         <>
-            <header>
-                <div>
-                    <h1>Where in the world?</h1>
-
-                    <button>Dark Mode</button>
-                </div>
-            </header>
+            <Header />
 
             <main>
                 <Form />
