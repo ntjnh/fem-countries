@@ -1,6 +1,8 @@
 export default function Form() {
     return (
-        <div>
+        <div
+            style={{"marginBottom": "1.5rem"}}
+        >
             <input type="text" name="" id="" placeholder="Search for a country..." />
 
             <select name="" id="">
