@@ -7,6 +7,7 @@ import './App.css'
 
 function App() {
     const [countries, setCountries] = useState([])
+    const [isDark, setIsDark] = useState(false)
 
     useEffect(() => {
         fetch('https://restcountries.com/v3.1/all?fields=borders,capital,currencies,flags,languages,name,population,region,subregion,tld')
@@ -29,28 +30,22 @@ function App() {
         )
     })
 
+    const lightClasses = 'bg-neutral-50'
+    const darkClasses = 'bg-slate-775'
+    const modeClasses = isDark ? darkClasses : lightClasses 
+
     return (
         <>
             <Header />
 
-            <main
-                style={{
-                    "margin": "auto",
-                    "maxWidth": "1280px",
-                    "position": "relative"
-                }}
-            >
-                <Form />
+            <main className={`pt-12 ${modeClasses}`}>
+                <div className="container mx-auto relative">
+                    <Form />
 
-                <section
-                    style={{
-                        "display": "flex",
-                        "flexWrap": "wrap",
-                        "justify-content": "space-between"
-                    }}
-                >
-                    {countryCards}
-                </section>
+                    <section className="grid gap-16 grid-cols-4">
+                        {countryCards}
+                    </section>
+                </div>
             </main>
 
             <Attr />
