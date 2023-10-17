@@ -4,7 +4,7 @@ import { faMoon } from '@fortawesome/free-regular-svg-icons'
 export default function Header() {
     return (
         <header>
-            <div>
+            <div className="container mx-auto">
                 <h1>Where in the world?</h1>
 
                 <button>
