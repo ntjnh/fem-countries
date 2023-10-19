@@ -9,6 +9,10 @@ function App() {
     const [countries, setCountries] = useState([])
     const [isDark, setIsDark] = useState(false)
 
+    function handleClick() {
+        setIsDark(prev => !prev)
+    }
+
     useEffect(() => {
         fetch('https://restcountries.com/v3.1/all?fields=borders,capital,currencies,flags,languages,name,population,region,subregion,tld')
         .then(response => response.json())
@@ -36,7 +40,7 @@ function App() {
 
     return (
         <>
-            <Header />
+            <Header isDark={isDark} modeToggle={handleClick} />
 
             <main className={`pt-12 ${modeClasses}`}>
                 <div className="container mx-auto relative">
