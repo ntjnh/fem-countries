@@ -44,7 +44,7 @@ function App() {
 
             <main className={`pt-12 ${modeClasses}`}>
                 <div className="container mx-auto relative">
-                    <Form />
+                    <Form isDark={isDark} />
 
                     <section className="grid gap-16 grid-cols-4">
                         {countryCards}
