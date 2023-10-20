@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
-export default function Form({ isDark }) {
+export default function Form({ isDark, onChange, searchTerm }) {
     const lightClasses = {
         icon: 'text-neutral-450',
         input: 'shadow-md shadow-neutral-200/60 text-neutral-450',
@@ -13,7 +13,7 @@ export default function Form({ isDark }) {
         select: 'bg-slate-750 shadow-lg shadow-slate-800 text-white'
     }
 
-    const modeClasses = isDark ? darkClasses : lightClasses 
+    const modeClasses = isDark ? darkClasses : lightClasses
 
     return (
         <div className="flex items-center justify-between mb-12">
@@ -25,7 +25,10 @@ export default function Form({ isDark }) {
                     name="countrySearch" 
                     id="countrySearch" 
                     placeholder="Search for a country..." 
+                    onChange={onChange}
+                    value={searchTerm}
                 />
+                <p className='absolute'>{searchTerm}</p>
             </div>
 
             <select 

@@ -8,6 +8,11 @@ import './App.css'
 function App() {
     const [countries, setCountries] = useState([])
     const [isDark, setIsDark] = useState(false)
+    const [searchTerm, setSearchTerm] = useState('')
+
+    function handleChange(e) {
+        setSearchTerm(e.target.value)
+    }
 
     function handleClick() {
         setIsDark(prev => !prev)
@@ -40,11 +45,18 @@ function App() {
 
     return (
         <>
-            <Header isDark={isDark} modeToggle={handleClick} />
+            <Header
+                isDark={isDark}
+                modeToggle={handleClick}
+            />
 
             <main className={`pt-12 ${modeClasses}`}>
                 <div className="container mx-auto relative">
-                    <Form isDark={isDark} />
+                    <Form
+                        isDark={isDark}
+                        onChange={() => handleChange}
+                        searchTerm={searchTerm}
+                    />
 
                     <section className="grid gap-16 grid-cols-4">
                         {countryCards}
