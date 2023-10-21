@@ -35,6 +35,7 @@ function App() {
                 population={population.toLocaleString()}
                 region={region}
                 capital={capital}
+                isDark={isDark}
             />
         )
     })
@@ -50,7 +51,7 @@ function App() {
                 modeToggle={handleClick}
             />
 
-            <main className={`pt-5 px-4 lg:pt-12 ${modeClasses}`}>
+            <main className={`pb-14 pt-5 px-4 lg:pt-12 ${modeClasses}`}>
                 <div className="container mx-auto relative">
                     <Form
                         isDark={isDark}
@@ -64,7 +65,7 @@ function App() {
                 </div>
             </main>
 
-            <Attr />
+            <Attr isDark={isDark} />
         </>
     )
 }
