@@ -50,7 +50,7 @@ function App() {
                 modeToggle={handleClick}
             />
 
-            <main className={`pt-12 ${modeClasses}`}>
+            <main className={`pt-5 px-4 lg:pt-12 ${modeClasses}`}>
                 <div className="container mx-auto relative">
                     <Form
                         isDark={isDark}
@@ -58,7 +58,7 @@ function App() {
                         searchTerm={searchTerm}
                     />
 
-                    <section className="grid gap-16 grid-cols-4">
+                    <section className="md:grid md:gap-16 md:grid-cols-2 lg:grid-cols-4 mx-auto w-[78%] md:w-full">
                         {countryCards}
                     </section>
                 </div>
