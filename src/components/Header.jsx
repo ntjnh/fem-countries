@@ -10,10 +10,10 @@ export default function Header({ isDark, modeToggle }) {
     return (
         <header className={`py-6 ${modeClasses}`}>
             <div className="container flex items-center justify-between mx-auto">
-                <h1 className="font-bold m-0 text-2xl">Where in the world?</h1>
+                <h1 className="font-bold m-0 text-2xl text-grey-925">Where in the world?</h1>
 
                 <button onClick={() => modeToggle()}>
-                    <FontAwesomeIcon className="mr-3" icon={isDark ? faMoonFilled : faMoon} />
+                    <FontAwesomeIcon className="mr-3 text-grey-925" icon={isDark ? faMoonFilled : faMoon} />
                     Dark Mode
                 </button>
             </div>
