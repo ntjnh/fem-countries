@@ -9,10 +9,7 @@ function App() {
     const [countries, setCountries] = useState([])
     const [isDark, setIsDark] = useState(false)
     const [searchTerm, setSearchTerm] = useState('')
-
-    function handleChange(e) {
-        setSearchTerm(e.target.value)
-    }
+    const [activeRegion, setActiveRegion] = useState('')
 
     function handleClick() {
         setIsDark(prev => !prev)
@@ -22,16 +19,32 @@ function App() {
         fetch('https://restcountries.com/v3.1/all?fields=borders,capital,currencies,flags,languages,name,population,region,subregion,tld')
         .then(response => response.json())
         .then(data => setCountries(data))
-    })
+    }, [])
+
+    function searchByTerm(term) {
+        setCountries(prev => {
+            prev.filter(p => {
+                return p.toLowerCase().includes(term.toLowerCase())
+            })
+        })
+    }
+
+    function regionFilter(selectedRegion) {
+        setCountries(prev => {
+            prev.filter(p => {
+                return p.region === selectedRegion
+            })
+        })
+    }
 
     const countryCards = countries.map((country, i) => {
-        const { flags, name, population, region, capital } = country
+        const { flags, name: {common}, population, region, capital } = country
 
         return (
             <Country
                 key={i}
                 flag={flags}
-                name={name.common}
+                name={common}
                 population={population.toLocaleString()}
                 region={region}
                 capital={capital}
@@ -55,8 +68,12 @@ function App() {
                 <div className="container mx-auto relative">
                     <Form
                         isDark={isDark}
-                        onChange={() => handleChange}
                         searchTerm={searchTerm}
+                        onChangeValue={newVal => setSearchTerm(newVal.target.value)}
+                        onRegionSelect={newRegion => {
+                            setActiveRegion(newRegion.target.value)
+                            regionFilter(activeRegion)
+                        }}
                     />
 
                     <section className="md:grid md:gap-16 md:grid-cols-2 lg:grid-cols-4 mx-auto w-[78%] md:w-full">

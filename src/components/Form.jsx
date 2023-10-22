@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass, faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
-export default function Form({ isDark, onChange, searchTerm }) {
+export default function Form({ isDark, onChangeValue, onRegionSelect }) {
     const lightClasses = {
         inputIcon: 'text-neutral-450',
         input: 'shadow-md shadow-neutral-200/60 text-neutral-450',
@@ -30,10 +30,8 @@ export default function Form({ isDark, onChange, searchTerm }) {
                     name="countrySearch" 
                     id="countrySearch" 
                     placeholder="Search for a country..." 
-                    onChange={onChange}
-                    value={searchTerm}
+                    onChange={onChangeValue}
                 />
-                <p className="absolute">{searchTerm}</p>
             </div>
 
             <div className="relative w-[200px]">
@@ -41,10 +39,11 @@ export default function Form({ isDark, onChange, searchTerm }) {
                     className={`appearance-none rounded-lg pl-6 pr-8 py-[17px] lg:py-5 text-xs lg:text-sm w-full ${modeClasses.select}`}
                     name="regionFilter" 
                     id="regionFilter"
+                    onChange={onRegionSelect}
                 >
                     <option className="text-sm">Filter by Region</option>
                     <option className="text-sm" value="africa">Africa</option>
-                    <option className="text-sm" value="america">Americas</option>
+                    <option className="text-sm" value="americas">Americas</option>
                     <option className="text-sm" value="asia">Asia</option>
                     <option className="text-sm" value="europe">Europe</option>
                     <option className="text-sm" value="oceania">Oceania</option>
