@@ -25,4 +25,4 @@ Users should be able to:
 
 - Website - [Nate](https://nate-dev.com)
 - Frontend Mentor - [@ntjnh](https://www.frontendmentor.io/profile/ntjnh)
-- Twitter - [@natejonah](https://www.twitter.com/natemanydev)
+- X - [@natemanydev](https://x.com/natemanydev)
