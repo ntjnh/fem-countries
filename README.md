@@ -23,6 +23,6 @@ Users should be able to:
 
 ## Author
 
-- Website - [Nate](https://natejonah.com)
+- Website - [Nate](https://nate-dev.com)
 - Frontend Mentor - [@ntjnh](https://www.frontendmentor.io/profile/ntjnh)
-- Twitter - [@natejonah](https://www.twitter.com/natejonah)
+- Twitter - [@natejonah](https://www.twitter.com/natemanydev)
