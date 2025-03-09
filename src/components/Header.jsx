@@ -22,7 +22,7 @@ export default function Header({ isDark, modeToggle }) {
 
                 <button
                     className="text-xs md:text-sm lg:text-base"
-                    onClick={() => modeToggle()}
+                    onClick={modeToggle}
                 >
                     <FontAwesomeIcon
                         className="mr-3"

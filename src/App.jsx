@@ -23,7 +23,7 @@ function App() {
 
     useEffect(() => {
         async function getCountries() {
-            await fetch('https://restcountries.com/v3.1/all?fields=borders,capital,currencies,flags,languages,name,population,region,subregion,tld')
+            await fetch('https://restcountries.com/v3.1/all?fields=capital,flags,name,population,region')
                 .then(response => response.json())
                 .then(data => {
                     setCountries(data)
@@ -71,19 +71,22 @@ function App() {
 
                     <section className="md:grid md:gap-16 md:grid-cols-2 lg:grid-cols-4 mx-auto w-[78%] md:w-full">
                         {
-                            filteredCountries.map((country, i) => {
+                            filteredCountries.map(country => {
                                 const { flags, name: { common }, population, region, capital } = country
+                                const slug = common.toLowerCase().split(' ').join('-')
 
                                 return (
-                                    <Country
-                                        key={i}
-                                        flag={flags}
-                                        name={common}
-                                        population={population.toLocaleString()}
-                                        region={region}
-                                        capital={capital}
-                                        isDark={isDark}
-                                    />
+                                    <a href={`/${slug}`} key={slug}>
+                                        <Country
+                                            slug={slug}
+                                            flag={flags}
+                                            name={common}
+                                            population={population.toLocaleString()}
+                                            region={region}
+                                            capital={capital}
+                                            isDark={isDark}
+                                        />
+                                    </a>
                                 )
                             })
                         }
